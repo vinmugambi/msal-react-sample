@@ -1,13 +1,13 @@
 const passportConfig = {
     credentials: {
-        tenantName: 'fabrikamb2c.onmicrosoft.com',
-        clientID: 'e29ac359-6a90-4f9e-b31c-8f64e1ac20cb',
+        tenantName: 'participateb2c.onmicrosoft.com',
+        clientID: '32316b44-e542-4bb4-b3d9-532eb8601e83',
     },
     policies: {
-        policyName: 'B2C_1_susi_v2',
+        policyName: 'B2C_1_signupsignin1',
     },
     metadata: {
-        b2cDomain: 'fabrikamb2c.b2clogin.com',
+        b2cDomain: 'participateb2c.b2clogin.com',
         authority: 'login.microsoftonline.com',
         discovery: '.well-known/openid-configuration',
         version: 'v2.0',
