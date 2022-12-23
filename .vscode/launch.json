@@ -16,6 +16,8 @@
     {
       "type": "chrome",
       "request": "launch",
+      "preLaunchTask": "start-spa",
+      "postDebugTask": "stop-spa",
       "name": "SPA",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}/API/src",
