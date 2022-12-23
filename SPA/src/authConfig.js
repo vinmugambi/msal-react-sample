@@ -12,11 +12,11 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: 'B2C_1_signupsignin1'
+        signUpSignIn: 'B2C_1A_SIGNUP_SIGNIN'
     },
     authorities: {
         signUpSignIn: {
-            authority: 'https://participateb2c.b2clogin.com/participateb2c.onmicrosoft.com/B2C_1_signupsignin1',
+            authority: 'https://participateb2c.b2clogin.com/participateb2c.onmicrosoft.com/B2C_1A_SIGNUP_SIGNIN',
         }
     },
     authorityDomain: 'participateb2c.b2clogin.com',
@@ -30,7 +30,7 @@ export const b2cPolicies = {
  */
 export const msalConfig = {
     auth: {
-        clientId: 'd7c9414e-5714-4df4-9cc8-457e2a577162', // This is the ONLY mandatory field that you need to supply.
+        clientId: 'fe05eda3-c353-4418-9544-35aeae885e06', // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Choose SUSI as your default authority.
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: '/', // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
@@ -74,7 +74,7 @@ export const msalConfig = {
  */
 export const protectedResources = {
     apiTodoList: {
-        endpoint:'https://msal-react-with-flow.azurewebsites.net/api/todolist',
+        endpoint:'https://msal-react-with-policy.azurewebsites.net/api/todolist',
         scopes: {
             read: ['https://participateb2c.onmicrosoft.com/TodoList/ToDoList.Read'],
             write: ['https://participateb2c.onmicrosoft.com/TodoList/ToDoList.ReadWrite'],

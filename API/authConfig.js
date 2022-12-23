@@ -4,7 +4,7 @@ const passportConfig = {
         clientID: '32316b44-e542-4bb4-b3d9-532eb8601e83',
     },
     policies: {
-        policyName: 'B2C_1_signupsignin1',
+        policyName: 'B2C_1A_SIGNUP_SIGNIN',
     },
     metadata: {
         b2cDomain: 'participateb2c.b2clogin.com',
