@@ -40,6 +40,7 @@ const limiter = rateLimit({
 // Apply the rate limiting middleware to all requests
 app.use(limiter);
 
+app.options('*', cors()) // include before other routes
 app.use(cors());
 
 app.use(express.json())
