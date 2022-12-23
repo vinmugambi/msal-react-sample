@@ -12,22 +12,14 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: 'B2C_1_susi_v2',
-        forgotPassword: 'B2C_1_reset_v3',
-        editProfile: 'B2C_1_edit_profile_v2',
+        signUpSignIn: 'B2C_1_signupsignin1'
     },
     authorities: {
         signUpSignIn: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi_v2',
-        },
-        forgotPassword: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/B2C_1_reset_v3',
-        },
-        editProfile: {
-            authority: 'https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile_v2',
-        },
+            authority: 'https://participateb2c.b2clogin.com/participateb2c.onmicrosoft.com/B2C_1_signupsignin1',
+        }
     },
-    authorityDomain: 'fabrikamb2c.b2clogin.com',
+    authorityDomain: 'participateb2c.b2clogin.com',
 };
 
 
@@ -38,7 +30,7 @@ export const b2cPolicies = {
  */
 export const msalConfig = {
     auth: {
-        clientId: '2fdd06f3-7b34-49a3-a78b-0cf1dd87878e', // This is the ONLY mandatory field that you need to supply.
+        clientId: 'd7c9414e-5714-4df4-9cc8-457e2a577162', // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Choose SUSI as your default authority.
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: '/', // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
@@ -82,10 +74,10 @@ export const msalConfig = {
  */
 export const protectedResources = {
     apiTodoList: {
-        endpoint: 'http://localhost:5000/api/todolist',
+        endpoint:'https://msal-react-with-flow.azurewebsites.net/api/todolist',
         scopes: {
-            read: ['https://fabrikamb2c.onmicrosoft.com/TodoList/ToDoList.Read'],
-            write: ['https://fabrikamb2c.onmicrosoft.com/TodoList/ToDoList.ReadWrite'],
+            read: ['https://participateb2c.onmicrosoft.com/TodoList/ToDoList.Read'],
+            write: ['https://participateb2c.onmicrosoft.com/TodoList/ToDoList.ReadWrite'],
         },
     },
 };
