@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "API",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "start"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node",
+      "cwd": "${workspaceFolder}/API"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "SPA",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/API/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/API/*"
+      }
+    },
+    {
+      "name": "Full stack",
+      "request": "launch",
+      "preLaunchTask": "start-spa",
+      "postDebugTask": "stop-spa",
+      "runtimeArgs": ["run-script", "start"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node",
+      "cwd": "${workspaceFolder}/API",
+      "serverReadyAction": {
+        "pattern": "listening on port 5000",
+        "uriFormat": "http://localhost:3000",
+        "action": "debugWithChrome"
+      }
+    }
+  ]
+}
